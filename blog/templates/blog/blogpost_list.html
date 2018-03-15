@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block sub_content %}
+
+<div>
+    <h1>블러그</h1>
+    <ul>
+        {% for obj in object_list %}
+        <li><a href="{% url 'blog:blogdetail' obj.pk %}">{{ obj }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div>
+    <h2>왼쪽 오른쪽 게임</h2>
+    <p>게임 현황</p>
+    <ul>
+        {% for ob in play %}
+        <li>"{{ ob.usr }}"님, {{ ob.created_date }}, {{ ob.leftright }}</li>
+        {% empty %}
+        <li>게임 참여 내역이 없습니다. 게임을 참여해 보세요^^*</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

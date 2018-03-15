@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block sub_content %}
+
+<h1>{{ object }}</h1>
+<p><a href="{% url 'blog:blogupdate' object.pk %}">수정하기</a></p>
+<p><a href="{% url 'blog:blogdelete' object.pk %}">삭제하기</a></p>
+{{ object.text }}
+
+{% endblock %}

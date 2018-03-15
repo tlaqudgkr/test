@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}새글쓰기{% endblock %}
+
+{% block sub_content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="새글쓰기" />
+</form>
+{% endblock %}
